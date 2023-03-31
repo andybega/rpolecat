@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# rpolecat
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of rpolecat is to ...
+
+## Installation
+
+You can install the development version of rpolecat like so:
+
+``` r
+library(remotes)
+install_github("basil-analytics/rplover")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(rpolecat)
+
+data(contexts)
+head(contexts)
+
+data(modes)
+head(modes)
+```
+

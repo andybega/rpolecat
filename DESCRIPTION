@@ -1,0 +1,19 @@
+Package: rpolecat
+Type: Package
+Title: Download and Transform the POLECAT Event Data
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Andreas", family = "Beger", role = c("cre", "aut"),
+           email = "adbeger@gmail.com", 
+           comment = c(ORCID = "0000-0003-1883-3169")),
+    person(given = "Benjamin E.", family = "Bagozzi", role = c("cre", "aut"),
+           email = "bagozzib@udel.edu")
+    )
+Maintainer: Andreas Beger <adbeger@gmail.com>
+Description: Download the POLECAT data from Dataverse. 
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.2.1
