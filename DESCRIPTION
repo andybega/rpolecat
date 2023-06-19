@@ -4,16 +4,18 @@ Title: Download and Transform the POLECAT Event Data
 Version: 0.1.0
 Authors@R: c(
     person(given = "Andreas", family = "Beger", role = c("cre", "aut"),
-           email = "adbeger@gmail.com", 
+           email = "andy@basilanalytics.com", 
            comment = c(ORCID = "0000-0003-1883-3169")),
-    person(given = "Benjamin E.", family = "Bagozzi", role = c("cre", "aut"),
+    person(given = "Benjamin E.", family = "Bagozzi", role = c("aut"),
            email = "bagozzib@udel.edu")
     )
-Maintainer: Andreas Beger <adbeger@gmail.com>
+Maintainer: Andreas Beger <andy@basilanalytics.com>
 Description: Download the POLECAT data from Dataverse. 
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
+Imports: 
+    dataverse
