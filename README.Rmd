@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # rpolecat
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/rpolecat)](https://CRAN.R-project.org/package=rpolecat)
 <!-- badges: end -->
 
 rpolecat makes downloading and working with the [POLECAT event data](https://dataverse.harvard.edu/dataverse/POLECAT) easier. 
@@ -43,16 +44,18 @@ install_github("basil-analytics/rpolecat")
 
 rpolecat depends on the [R Dataverse Client](https://github.com/IQSS/dataverse-client-r) to interact with the Dataverse API. That package requires two environment variables in order to be able to interact with the API. More details are documented in the dataverse R package readme [API Access Keys](https://github.com/IQSS/dataverse-client-r#api-access-keys) section. 
 
-One way to meet this requirement is to:
+One way to meet this requirement without have to mess with R every time you start it is to:
 
 1. [Obtain an API access token](https://guides.dataverse.org/en/latest/user/account.html#api-token) from Harvard Dataverse.
 2. Add the following lines to your [`.Rprofile`](https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf) file:
-  ```r
-  # dataverse API token
-  Sys.setenv(DATAVERSE_SERVER = "dataverse.harvard.edu")
-  Sys.setenv(DATAVERSE_KEY = "<your API token>")
-  ```
-  (You can find and open your `.Rprofile` file using `usethis::edit_r_profile()` if the [usethis](https://cran.r-project.org/package=usethis) package is installed.)
+    
+    ```r
+    # dataverse API token  
+    Sys.setenv(DATAVERSE_SERVER = "dataverse.harvard.edu")  
+    Sys.setenv(DATAVERSE_KEY = "<your API token>")  
+    ```
+    
+    (You can find and open your `.Rprofile` file using `usethis::edit_r_profile()` if the [usethis](https://cran.r-project.org/package=usethis) package is installed.)  
 3. Restart R for the changes to take effect.
 
  
@@ -91,7 +94,8 @@ head(modes)
 
 The data license is [viewable on dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/AJGVIT). We copy it here for convenience:
 
-> The POLECAT data are produced by the Program on Geostrategic Risk (formerly the Political Instability Task Force). The Program on Geostrategic Risk is funded by the Central Intelligence Agency. The views expressed are the authors' alone and do not represent the views of the U.S. Government. We are unable to provide the story text from which events are extracted or the URLs due to licensing restrictions. For any data issues or bug reports please contact the dataset points of contact. THESE MATERIALS ARE SUBJECT TO COPYRIGHT PROTECTION AND MAY ONLY BE USED AND COPIED FOR RESEARCH AND EDUCATIONAL PURPOSES. THE MATERIALS MAY NOT BE USED OR COPIED FOR ANY COMMERCIAL PURPOSES. © 2023 Leidos. All rights reserved. THE MATERIALS ARE PROVIDED ON AN AS-IS BASIS, WITH NO WARRANTIES OR GUARANTIES OF ANY KIND. THE OWNERS WILL NOT BE LIABLE FOR ANY DAMAGES ARISING FROM THEIR USE. USE OF THE MATERIALS IS ENTIRELY AT YOUR OWN RISK.
+> The POLECAT data are produced by the Program on Geostrategic Risk (formerly the Political Instability Task Force). The Program on Geostrategic Risk is funded by the Central Intelligence Agency. The views expressed are the authors' alone and do not represent the views of the U.S. Government. We are unable to provide the story text from which events are extracted or the URLs due to licensing restrictions. For any data issues or bug reports please contact the dataset points of contact. 
+> THESE MATERIALS ARE SUBJECT TO COPYRIGHT PROTECTION AND MAY ONLY BE USED AND COPIED FOR RESEARCH AND EDUCATIONAL PURPOSES. THE MATERIALS MAY NOT BE USED OR COPIED FOR ANY COMMERCIAL PURPOSES. © 2023 Leidos. All rights reserved. THE MATERIALS ARE PROVIDED ON AN AS-IS BASIS, WITH NO WARRANTIES OR GUARANTIES OF ANY KIND. THE OWNERS WILL NOT BE LIABLE FOR ANY DAMAGES ARISING FROM THEIR USE. USE OF THE MATERIALS IS ENTIRELY AT YOUR OWN RISK.
 
 
 

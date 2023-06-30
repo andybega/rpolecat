@@ -4,6 +4,9 @@
 # rpolecat
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/rpolecat)](https://CRAN.R-project.org/package=rpolecat)
 <!-- badges: end -->
 
 rpolecat makes downloading and working with the [POLECAT event
@@ -47,25 +50,29 @@ dataverse R package readme [API Access
 Keys](https://github.com/IQSS/dataverse-client-r#api-access-keys)
 section.
 
-One way to meet this requirement is to:
+One way to meet this requirement without have to mess with R every time
+you start it is to:
 
 1.  [Obtain an API access
     token](https://guides.dataverse.org/en/latest/user/account.html#api-token)
     from Harvard Dataverse.
+
 2.  Add the following lines to your
     [`.Rprofile`](https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf)
     file:
 
-``` r
-# dataverse API token
-Sys.setenv(DATAVERSE_SERVER = "dataverse.harvard.edu")
-Sys.setenv(DATAVERSE_KEY = "<your API token>")
-```
+    ``` r
+    # dataverse API token  
+    Sys.setenv(DATAVERSE_SERVER = "dataverse.harvard.edu")  
+    Sys.setenv(DATAVERSE_KEY = "<your API token>")  
+    ```
 
-(You can find and open your `.Rprofile` file using
-`usethis::edit_r_profile()` if the
-[usethis](https://cran.r-project.org/package=usethis) package is
-installed.) 3. Restart R for the changes to take effect.
+    (You can find and open your `.Rprofile` file using
+    `usethis::edit_r_profile()` if the
+    [usethis](https://cran.r-project.org/package=usethis) package is
+    installed.)  
+
+3.  Restart R for the changes to take effect.
 
 ## Example
 
