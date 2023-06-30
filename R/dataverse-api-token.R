@@ -32,14 +32,25 @@
 #'
 #' @export
 dataverse_api_token <- function(print = TRUE) {
+  if (!check_api_token()) {
+    stop("API token or server are not set. See ?dataverse_api_token")
+  }
   token <- Sys.getenv("DATAVERSE_KEY")
   server <- Sys.getenv("DATAVERSE_SERVER")
   if (print) {
     cat("Server:", ifelse(server=="", "<missing>", server), "\n")
     cat("Token:", ifelse(token=="", "<missing>", token), "\n")
   }
-  if (token=="" | server=="") {
-    stop("API token or server are not set. See ?dataverse_api_token")
-  }
   invisible(list(token = token, server = server))
 }
+
+
+check_api_token <- function() {
+  token <- Sys.getenv("DATAVERSE_KEY")
+  server <- Sys.getenv("DATAVERSE_SERVER")
+  # return TRUE if both token and server are set, FALSE otherwise
+  token!="" & server!=""
+}
+
+
+
