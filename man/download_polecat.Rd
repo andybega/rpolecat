@@ -4,7 +4,13 @@
 \alias{download_polecat}
 \title{Download POLECAT}
 \usage{
-download_polecat(local_dir, years = NULL, verbose = TRUE)
+download_polecat(
+  local_dir,
+  years = NULL,
+  skip_existing = TRUE,
+  verbose = TRUE,
+  dryrun = FALSE
+)
 }
 \arguments{
 \item{local_dir}{Which local directory to download the data to?}
@@ -13,11 +19,41 @@ download_polecat(local_dir, years = NULL, verbose = TRUE)
 default (NULL) will download all available data. Otherwise, specify a
 numeric vector, e.g. \code{2023}, \code{2022:2023}, or \code{c(2021, 2023)}.}
 
+\item{skip_existing}{Skip files that are already in "local_dir"?}
+
 \item{verbose}{Print progress messages as files are being downloaded?}
+
+\item{dryrun}{Don't actually download the files, just print information on
+what files would be downloaded.}
 }
 \value{
 Data will be downloaded to \code{local_dir}.
 }
 \description{
 Download the POLECAT data from dataverse.
+}
+\details{
+This function will download files from dataverse as they are, which
+namely means that the zipped files will remain zipped. Two potential issues:
+\itemize{
+\item You zipped the "ReleaseXXX.DV.txt" files to save space: "skip_existing"
+should be able to handle that. It will remove ".zip" or ".gz" from the
+filenames before comparing.
+\item You unzipped the yearly data files, which actually each contain 12
+monthly data files. To avoid re-downloading those, use "skip_existing"
+and set the "years" argument to only the current year. See the examples.
+}
+}
+\examples{
+\dontrun{
+  # Basic, fresh download
+  download_polecat("my/data/dir")
+
+  # Next time, to avoid re-downloading files you already have:
+  download_polecat("my/data/dir", skip_existing = TRUE)
+
+  # To download only fresh data fur the current year, or avoid re-downloading
+  # the yearly historical data files if you unzipped them:
+  download_polecat("my/data/dir", years = 2023, skip_existing = TRUE)
+}
 }
